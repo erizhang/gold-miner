@@ -9,7 +9,7 @@ import static org.junit.Assert.assertEquals;
 
 class IsItFriday{
     static String isItFriday(String today) {
-        return "Nope";
+        return "Friday".equals(today) ? "TGIF" : "Nope";
     }
 }
 
@@ -23,6 +23,12 @@ public class Stepdefs {
         today = "Sunday";
     }
 
+    @Given("^today is Friday$")
+    public void today_is_Friday() {
+        today = "Friday";
+    }
+
+
     @When("^I ask whether it's Friday yet$")
     public void i_ask_whether_it_s_Friday_yet() {
         actualAnswer = IsItFriday.isItFriday(today);
@@ -32,5 +38,4 @@ public class Stepdefs {
     public void i_should_be_told(String expectedAnswer) {
         assertEquals(expectedAnswer, actualAnswer);
     }
-
 }
