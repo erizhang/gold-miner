@@ -7,11 +7,6 @@ import cucumber.api.java.en.When;
 import static org.junit.Assert.assertEquals;
 
 
-class IsItFriday{
-    static String isItFriday(String today) {
-        return "Friday".equals(today) ? "TGIF" : "Nope";
-    }
-}
 
 public class Stepdefs {
 
